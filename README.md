@@ -1,5 +1,7 @@
 # uuidfmt
 
+[![Build Status](https://travis-ci.org/zshamrock/uuidfmt.svg?branch=master)](https://travis-ci.org/zshamrock/uuidfmt)
+
 Really simple CLI tool to format UUID into the canonical presentation.
 
 ## Installation
