@@ -14,6 +14,8 @@ Use the `go` command:
 
     $ uuidfmt 3A2DD5E0D2C04F13A3E2F600C9530793
 
+![uuidfmt](uuidfmt.gif)
+
 ## Copyright
 
 Copyright (C) 2018 by Aliaksandr Kazlou.
