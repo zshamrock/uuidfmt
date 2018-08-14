@@ -1,0 +1,12 @@
+name: uuidfmt # you probably want to 'snapcraft register <name>'
+version: '1.0.0' # just for humans, typically '1.2+git' or '1.3.2'
+summary: Format UUID to the canonical form # 79 char long summary
+description: |
+    Format UUID to the canonical form, ex.: ex.: 3A2DD5E0D2C04F13A3E2F600C9530793 -> 3a2dd5e0-d2c0-4f13-a3e2-f600c9530793.
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: devmode # use 'strict' once you have the right plugs and slots
+
+parts:
+  my-part:
+    # See 'snapcraft plugins'
+    plugin: nil
