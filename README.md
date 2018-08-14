@@ -1,6 +1,7 @@
 # uuidfmt
 
 [![Build Status](https://travis-ci.org/zshamrock/uuidfmt.svg?branch=master)](https://travis-ci.org/zshamrock/uuidfmt)
+[![Snap Status](https://build.snapcraft.io/badge/zshamrock/uuidfmt.svg)](https://build.snapcraft.io/user/zshamrock/uuidfmt)
 
 Really simple CLI tool to format UUID into the canonical presentation.
 
