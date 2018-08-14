@@ -10,6 +10,10 @@ Use the `go` command:
 
 	$ go get github.com/zshamrock/uuidfmt
 
+Or using `snap`:
+
+    $ snap install uuidfmt
+
 ## Usage
 
     $ uuidfmt 3A2DD5E0D2C04F13A3E2F600C9530793
