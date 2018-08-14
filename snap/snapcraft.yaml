@@ -6,7 +6,15 @@ description: |
 grade: devel # must be 'stable' to release into candidate/stable channels
 confinement: devmode # use 'strict' once you have the right plugs and slots
 
+apps:
+  uuidfmt:
+    command: uuidfmt
+
 parts:
-  my-part:
-    # See 'snapcraft plugins'
-    plugin: nil
+  go:
+    source-tag: go1.10.1
+  uuidfmt:
+    after: [go]
+    source: .
+    plugin: go
+    go-importpath: github.com/zshamrock/uuidfmt
