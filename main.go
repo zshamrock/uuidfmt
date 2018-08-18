@@ -1,20 +1,21 @@
 package main
 
 import (
+	"fmt"
+	"gopkg.in/satori/go.uuid.v1"
 	"os"
 	"strings"
-	"gopkg.in/satori/go.uuid.v1"
-	"fmt"
 )
 
 func main() {
-	if len(os.Args) == 1 || len(os.Args) != 2 {
+	if len(os.Args) == 1 || len(os.Args) > 3 {
 		usage()
 	}
 	text := os.Args[1]
 	if text == "-h" || text == "--help" || text == "help" {
 		usage()
 	}
+
 	u := strings.ToLower(text)
 	fmt.Println(formatUUID(u))
 }
@@ -32,6 +33,8 @@ func usage() {
 	fmt.Println(
 		"Formats UUID into the canonical presentation, " +
 			"ex.: 3A2DD5E0D2C04F13A3E2F600C9530793 -> 3a2dd5e0-d2c0-4f13-a3e2-f600c9530793.\n" +
-			"Usage: uuidfmt <uuid>")
+			"Usage: uuidfmt [-r] <uuid>\n" +
+			"    -r reverse, i.e. do the opposite of the formatting to canonical form, " +
+			"i.e. 3a2dd5e0-d2c0-4f13-a3e2-f600c9530793 -> 3A2DD5E0D2C04F13A3E2F600C9530793")
 	os.Exit(0)
 }
