@@ -15,25 +15,38 @@ func main() {
 	if text == "-h" || text == "--help" || text == "help" {
 		usage()
 	}
-
-	u := strings.ToLower(text)
-	fmt.Println(formatUUID(u))
+	var reverse bool
+	if text == "-r" || text == "--reverse" {
+		reverse = true
+	}
+	if reverse {
+		text = os.Args[2]
+	}
+	fmt.Println(formatUUID(text, reverse))
 }
 
-func formatUUID(text string) string {
-	u, err := uuid.FromString(strings.ToLower(strings.Replace(text, "-", "", -1)))
+func formatUUID(text string, reverse bool) string {
+	u, err := uuid.FromString(strings.ToLower(normalize(text)))
 	if err != nil {
 		fmt.Printf("Provided %s text does not look like UUID %v\n", text, err)
 		os.Exit(1)
 	}
-	return u.String()
+	result := u.String()
+	if reverse {
+		return strings.ToUpper(normalize(result))
+	}
+	return result
+}
+
+func normalize(text string) string {
+	return strings.Replace(text, "-", "", -1)
 }
 
 func usage() {
 	fmt.Println(
 		"Formats UUID into the canonical presentation, " +
 			"ex.: 3A2DD5E0D2C04F13A3E2F600C9530793 -> 3a2dd5e0-d2c0-4f13-a3e2-f600c9530793.\n" +
-			"Usage: uuidfmt [-r] <uuid>\n" +
+			"Usage: uuidfmt [-r/--reverse] <uuid>\n" +
 			"    -r reverse, i.e. do the opposite of the formatting to canonical form, " +
 			"i.e. 3a2dd5e0-d2c0-4f13-a3e2-f600c9530793 -> 3A2DD5E0D2C04F13A3E2F600C9530793")
 	os.Exit(0)
