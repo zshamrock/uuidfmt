@@ -19,6 +19,12 @@ Or using `snap`:
 
     $ uuidfmt 3A2DD5E0D2C04F13A3E2F600C9530793
 
+## Options
+
+    -r/--reverse - apply the reverse formatting
+
+i.e. `3a2dd5e0-d2c0-4f13-a3e2-f600c9530793` `->` `3A2DD5E0D2C04F13A3E2F600C9530793`.
+
 ![uuidfmt](uuidfmt.gif)
 
 ## Copyright
